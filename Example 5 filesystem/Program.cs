@@ -19,8 +19,7 @@ namespace FileStreamApp
             Console.WriteLine("***** Fun with FileStreams Without Readers*****\n");
 
             // Obtain a FileStream object.
-            using (FileStream fStream = File.Open(@"C:\myMessage.dat",
-              FileMode.Create))
+            using (FileStream fStream = File.Open(@".\myMessage.dat", FileMode.Create))
             {
                 // Encode a string as an array of bytes.
                 string msg = "Hello!";
@@ -53,7 +52,7 @@ namespace FileStreamApp
             Console.WriteLine("***** Fun with FileStreams Using Writer/Reader *****\n");
 
             // Obtain a FileStream object.
-            using (FileStream fStream = File.Open(@"C:\myMessage.dat",
+            using (FileStream fStream = File.Open(@".\myMessage.dat",
               FileMode.Create))
             {
                 // Encode a string as an array of bytes.
@@ -79,7 +78,6 @@ namespace FileStreamApp
                                 Console.WriteLine(Encoding.Default.GetString(fileAsByteArray));
             }
 
-            
             Console.ReadLine();
         }
 

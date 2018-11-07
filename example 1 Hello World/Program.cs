@@ -15,17 +15,17 @@ namespace SimpleCSharpApp
 
             #region Various ways to process incoming args
             // Process any incoming args.
-            //for (int i = 0; i < args.Length; i++)
-            //    Console.WriteLine("Arg: {0}", args[i]);
+            for (int i = 0; i < args.Length; i++)
+                Console.WriteLine("Arg: {0}", args[i]);
 
             // Process any incoming args using foreach.
             foreach (string arg in args)
                 Console.WriteLine("Arg: {0}", arg);
 
             // Get arguments using System.Environment.
-            //string[] theArgs = Environment.GetCommandLineArgs();
-            //foreach (string arg in theArgs)
-            //    Console.WriteLine("Arg: {0}", arg);
+            string[] theArgs = Environment.GetCommandLineArgs();
+            foreach (string arg in theArgs)
+                Console.WriteLine("Arg: {0}", arg);
             #endregion
             // Helper method within the Program class.
             ShowEnvironmentDetails();

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace IterationsAndDecisions
 {
@@ -11,13 +8,13 @@ namespace IterationsAndDecisions
         {
             Console.WriteLine("***** Loops and Choices *****");
             ForAndForEachLoop();
-            //VarInForeachLoop();
-            //ExecuteWhileLoop();
-            //ExecuteDoWhileLoop();
-            //ExecuteIfElse();
-            //ExecuteSwitch();
-            //ExecuteSwitchOnString();
-            
+            VarInForeachLoop();
+            ExecuteWhileLoop();
+            ExecuteDoWhileLoop();
+            ExecuteIfElse();
+            ExecuteSwitch();
+            ExecuteSwitchOnString();
+
             Console.ReadLine();
         }
 
@@ -95,7 +92,11 @@ namespace IterationsAndDecisions
             {
                 Console.WriteLine("string is greater than 0 characters");
             }
-        } 
+            else
+            {
+                Console.WriteLine("string is 0 characters");
+            }
+        }
         #endregion
 
         #region switch statements

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace FunWithStrings
@@ -11,7 +9,7 @@ namespace FunWithStrings
         {
             Console.WriteLine("***** Fun with Strings *****\n");
             BasicStringFunctionality();
-            StringConcatenation();            
+            StringConcatenation();
             //FunWithStringBuilder();
             Console.ReadLine();
         }
@@ -34,7 +32,7 @@ namespace FunWithStrings
             Console.WriteLine("New first name: {0}", firstName.Replace("dy", ""));
             Console.WriteLine();
 
-            
+
         }
         #endregion
 
@@ -50,7 +48,7 @@ namespace FunWithStrings
             Console.WriteLine();
         }
         #endregion
-                       
+
         #region StringBuilder
         static void FunWithStringBuilder()
         {
@@ -60,13 +58,12 @@ namespace FunWithStrings
             StringBuilder sb = new StringBuilder("**** Fantastic Games ****", 256);
 
             sb.Append("\n");
-            sb.AppendLine("Half Life");
-            sb.AppendLine("Beyond Good and Evil");
-            sb.AppendLine("Deus Ex 2");
-            sb.AppendLine("System Shock");
+            string[] greatGames = { "Half Life", "Beyond Good and Evil", "Deus Ex 2", "System Shock" };
+            foreach (var game in greatGames)
+                sb.AppendLine(game);
             Console.WriteLine(sb.ToString());
             // This sample shows the new object was created with concat;
-           // sb.Replace("2", "Invisible War");
+            sb.Replace("2", "Invisible War");
             Console.WriteLine(sb.ToString());
             Console.WriteLine("sb has {0} chars.", sb.Length);
             Console.WriteLine();

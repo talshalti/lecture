@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace BasicConsoleIO
 {
@@ -10,11 +7,11 @@ namespace BasicConsoleIO
         static void Main(string[] args)
         {
             Console.WriteLine("***** Basic Console I/O *****");
-           string userAge = GetUserData();
+            string userAge = GetUserData();
             Console.WriteLine();
 
             // John says...
-            //Console.WriteLine("{0}, Number {0}, Number {0}", 9);
+            Console.WriteLine("{0}, Number {0}, Number {0}", userAge);
 
             // Prints: 20, 10, 30
             //Console.WriteLine("{1}, {0}, {2}", 10, 20, 30);
@@ -54,7 +51,7 @@ namespace BasicConsoleIO
         {
             int UserAge = 100;
             int.TryParse(userAge, out UserAge);
-            Console.WriteLine("The value {0} in various formats:",UserAge);
+            Console.WriteLine("The value {0} in various formats:", UserAge);
             Console.WriteLine("c format: {0:c}", UserAge);
             Console.WriteLine("d9 format: {0:d9}", UserAge);
             Console.WriteLine("f3 format: {0:f3}", UserAge);
@@ -62,10 +59,10 @@ namespace BasicConsoleIO
 
             // Notice that upper- or lowercasing for hex
             // determines if letters are upper- or lowercase.
-            Console.WriteLine("E format: {0:E}", UserAge);
-            Console.WriteLine("e format: {0:e}", UserAge);
-            Console.WriteLine("X format: {0:X}", UserAge);
-            Console.WriteLine("x format: {0:x}", UserAge);
+            Console.WriteLine($"E format: {UserAge:E}");
+            Console.WriteLine($"e format: {UserAge:e}");
+            Console.WriteLine($"X format: {UserAge:X}");
+            Console.WriteLine($"x format: {UserAge:x}");
         }
         #endregion
     }

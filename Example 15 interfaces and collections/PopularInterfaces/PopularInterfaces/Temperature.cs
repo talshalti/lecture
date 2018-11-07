@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace PopularInterfaces
 {
@@ -10,16 +7,6 @@ namespace PopularInterfaces
         // The temperature value 
         protected double temperatureF;
 
-        public int CompareTo(object obj)
-        {
-            if (obj == null) return 1;
-
-            Temperature otherTemperature = obj as Temperature;
-            if (otherTemperature != null)
-                return this.temperatureF.CompareTo(otherTemperature.temperatureF);
-            else
-                throw new ArgumentException("Object is not a Temperature");
-        }
 
         public double Fahrenheit
         {
@@ -43,6 +30,17 @@ namespace PopularInterfaces
             {
                 this.temperatureF = (value * 9.0 / 5) + 32;
             }
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+
+            Temperature otherTemperature = obj as Temperature;
+            if (otherTemperature != null)
+                return this.temperatureF.CompareTo(otherTemperature.temperatureF);
+            else
+                throw new ArgumentException("Object is not a Temperature");
         }
     }
 

@@ -13,11 +13,11 @@ namespace BasicDataTypes
         static void Main(string[] args)
         {
             Console.WriteLine("***** Fun with Basic Data Types *****\n");
-            //LocalVarDeclarations();
-            //ObjectFunctionality();
-            //DataTypeFunctionality();
-            //CharFunctionality();
-            //ParseFromStrings();
+            LocalVarDeclarations();
+            ObjectFunctionality();
+            DataTypeFunctionality();
+            CharFunctionality();
+            ParseFromStrings();
             UseDatesAndTimes();
             Console.ReadLine();
             

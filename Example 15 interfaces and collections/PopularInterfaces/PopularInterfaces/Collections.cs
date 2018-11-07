@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Linq;
-using System.Text;
 using System.Diagnostics;
 
 namespace PopularInterfaces
@@ -24,7 +22,7 @@ namespace PopularInterfaces
             TempsHashed = new Hashtable();
             Console.WriteLine("");
             Console.WriteLine("Filling Collections");
-            for (int i = 0; i < temperatures.Length; i+=2)
+            for (int i = 0; i < temperatures.Length; i += 2)
             {
                 TempsStacked.Push(temperatures[i]);
                 TempsSorted.Add(i, temperatures[i]);
@@ -57,13 +55,14 @@ namespace PopularInterfaces
             while (TempsStacked.Count > 0)
             {
                 //TempsStacked.Pop();
-                 Console.WriteLine(((Temperature)TempsStacked.Pop()).Celsius);
+                Console.WriteLine(((Temperature)TempsStacked.Pop()).Celsius);
             }
             sw.Stop();
             Console.WriteLine("Operation Took:{0}", sw.ElapsedTicks);
         }
 
-        public void PrintSorted() {
+        public void PrintSorted()
+        {
             sw.Reset();
             sw.Start();
             Console.WriteLine("Starting Sorted");
@@ -89,16 +88,16 @@ namespace PopularInterfaces
             Console.WriteLine("Operation Took:{0}", sw.ElapsedTicks);
 
         }
-        public void PrintHashed() {
+        public void PrintHashed()
+        {
             sw.Reset();
             sw.Start();
             Console.WriteLine("Starting Hashed");
             foreach (DictionaryEntry item in TempsHashed)
             {
-                Console.WriteLine("Key:{0};Value:{1}",item.Key, ((Temperature)item.Value).Celsius);
+                Console.WriteLine("Key:{0};Value:{1}", item.Key, ((Temperature)item.Value).Celsius);
             }
             Console.WriteLine("Operation Took:{0}", sw.ElapsedTicks);
-        
         }
 
     }

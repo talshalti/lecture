@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace PopularInterfaces
 {
@@ -23,7 +20,7 @@ namespace PopularInterfaces
             ////Test IList
             //IterateMe();
             //Console.WriteLine("");
-
+            
             //// Show IDisposable
             //Console.ReadLine();
 
@@ -36,7 +33,7 @@ namespace PopularInterfaces
         private static void TestSmaller()
         {
             Console.WriteLine("Testing Smaller on Left");
-             Temperature ta_reading1 = new Temperature() { Celsius = 20 };
+            Temperature ta_reading1 = new Temperature() { Celsius = 20 };
             Temperature ta_reading2 = new Temperature() { Celsius = 22 };
             Temperature ta_reading3 = new Temperature() { Celsius = 23 };
 
@@ -53,9 +50,9 @@ namespace PopularInterfaces
             // Result that is -1 left side is bigger
             // Result that is 1 right side is bigger
             // Result that is 0 they are equal
-           int comp = ta_temperatures.CompareTo(eilat_temperatures);
-           string res = GetComparisonString(comp);
-            Console.WriteLine("Result {0}",res);
+            int comp = ta_temperatures.CompareTo(eilat_temperatures);
+            string res = GetComparisonString(comp);
+            Console.WriteLine("Result {0}", res);
         }
 
         private static string GetComparisonString(int compareResult)
@@ -123,7 +120,7 @@ namespace PopularInterfaces
             Temperature ta_reading3 = new Temperature() { Celsius = 13 };
             YouNameIt<Temperature> ta_temperatures = new YouNameIt<Temperature>(new Temperature[3] { ta_reading1,
             ta_reading2,ta_reading3});
-            Console.WriteLine("Object Version {0}",  ta_temperatures.YouNameItVersion);
+            Console.WriteLine("Object Version {0}", ta_temperatures.YouNameItVersion);
             for (int i = 0; i < ta_temperatures.Readings.Length; i++)
             {
                 Console.WriteLine("Readings {0}:{1}", i, ta_temperatures.Readings[i].Celsius);
@@ -150,7 +147,8 @@ namespace PopularInterfaces
             ta_reading2,ta_reading3});
             Console.WriteLine("Object Version {0}", ta_temperatures.YouNameItVersion);
             Console.WriteLine("Running with a foreach loop");
-            foreach(Temperature t in ta_temperatures){
+            foreach (Temperature t in ta_temperatures)
+            {
                 Console.WriteLine("Readings {0}", t.Celsius);
             }
 
@@ -159,7 +157,7 @@ namespace PopularInterfaces
             ta_temperatures.Add(ta_reading4);
             // Since we added a reference to an object both readings will be the same
             ta_reading4.Celsius = 54;
-            ta_temperatures.Insert(10,ta_reading4);
+            ta_temperatures.Insert(10, ta_reading4);
             Console.WriteLine("");
             Console.WriteLine("Object Version {0}", ta_temperatures.YouNameItVersion);
             Console.WriteLine("Running with a foreach loop after adding items to IList");

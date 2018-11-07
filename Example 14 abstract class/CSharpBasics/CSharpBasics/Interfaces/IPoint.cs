@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace CSharpBasics.Interfaces
+﻿namespace CSharpBasics.Interfaces
 {
-   public interface IPoint
+    public interface IPoint
     {
+        // Uncomment, and it wouldn't compile
+        // static int zero = 0;
         int X { get; set; }
         int Y { get; set; }
     }

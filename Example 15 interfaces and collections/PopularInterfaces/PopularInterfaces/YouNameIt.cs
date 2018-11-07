@@ -1,20 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace PopularInterfaces
 {
-
-    
-
-    class YouNameIt<T>:IComparable,ICloneable,IEnumerable<T>,IDisposable,IList<T>,ICollection<T>
+    class YouNameIt<T> : IComparable, ICloneable, IEnumerable<T>, IDisposable, IList<T>, ICollection<T>
     {
         public int YouNameItVersion { get; private set; }
+        public T[] Readings { get; set; }
 
         public YouNameIt(T[] inReadings)
         {
-            YouNameItVersion = 1; 
+            YouNameItVersion = 1;
             Readings = inReadings;
         }
 
@@ -23,22 +19,19 @@ namespace PopularInterfaces
             Readings = new T[0];
         }
 
-        public T[] Readings { get; set; }
-    
-        
-
         #region IComparable
         public int CompareTo(object obj)
         {
             if (obj == null) return 1;
             YouNameIt<T> otherArray = (YouNameIt<T>)obj;
-           int res =0;
-           //for (int i = 0; i < otherArray.Readings.Length && i < Readings.Length; i++)
-           //{
-           //    T thisReading = Readings[i];
-           //    T otherReading = otherArray.Readings[i];
-           //    res += ((IComparable)thisReading).CompareTo((IComparable)otherReading);
-           //}
+            int res = 0;
+            // We could use this, but we have enumerator
+            //for (int i = 0; i < otherArray.Readings.Length && i < Readings.Length; i++)
+            //{
+            //    T thisReading = Readings[i];
+            //    T otherReading = otherArray.Readings[i];
+            //    res += ((IComparable)thisReading).CompareTo((IComparable)otherReading);
+            //}
 
             IEnumerator<T> thisEnumerator = this.GetEnumerator();
             IEnumerator<T> otherEnumerator = otherArray.GetEnumerator();
@@ -49,10 +42,10 @@ namespace PopularInterfaces
                 res += ((IComparable)thisReading).CompareTo((IComparable)otherReading);
             }
 
-            if(res<0) res = -1;
-            if(res>0) res = 1;
+            if (res < 0) res = -1;
+            if (res > 0) res = 1;
             return res;
-                
+
         }
         #endregion
 
@@ -74,7 +67,7 @@ namespace PopularInterfaces
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            for(int i=0;i<Readings.Length;i++)
+            for (int i = 0; i < Readings.Length; i++)
             {
                 yield return Readings[i];
             }
@@ -203,11 +196,7 @@ namespace PopularInterfaces
         //    throw new NotImplementedException();
         //}
 
-        //IEnumerator<T> IEnumerable<T>.GetEnumerator()
-        //{
-        //    throw new NotImplementedException();
-        //}
 
-       
+
     }
 }
